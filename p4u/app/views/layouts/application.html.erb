@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>P4U - マヨナカ ランキング -</title>
+  <%= csrf_meta_tags %>
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <%= stylesheet_link_tag    "bootstrap.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
+  <%= javascript_include_tag "http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js" %>
+
+</head>
+<body style="padding-top: 60px">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="conteiner">
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "TOPページへ", "/" %></li>
+            <li><%= link_to "プレイヤー検索", "/search"  %></li>
+            <li><%= link_to "ランキング", "/rankings"  %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span9">
+        <div class="leaderboard">  
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

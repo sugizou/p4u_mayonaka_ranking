@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  player_name: MyString
+  : 
+  sex: MyString
+  : 
+  home: MyString
+  community_comment: MyString
+  public_comment: MyString
+  alive_flg: 
+  update_time: 
+
+two:
+  player_id: 1
+  player_name: MyString
+  : 
+  sex: MyString
+  : 
+  home: MyString
+  community_comment: MyString
+  public_comment: MyString
+  alive_flg: 
+  update_time: 

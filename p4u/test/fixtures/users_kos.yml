@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battle_count: 1
+  battle_wins: 1
+  win_percentage: 1.5
+  top_psr_char: MyString
+  top_psr_point: 1
+  exp: 1
+  win_streak: MyString
+
+two:
+  battle_count: 1
+  battle_wins: 1
+  win_percentage: 1.5
+  top_psr_char: MyString
+  top_psr_point: 1
+  exp: 1
+  win_streak: MyString

@@ -1,0 +1,43 @@
+<h3>キャラクター個別戦績</h3>
+<%
+   @char_id = request.params[:char_id]
+   @p_id = request.params[:p_id]
+   @char_name = Character.select(:character_name).where(:top_psr_char => @char_id)
+%>
+
+<h3><%= @char_name.first.character_name %></h3>
+<ul>
+  <li>PSR<%= @individual.first.psr%></li>
+  <li>対戦使用回数<%= @individual.first.battle_count %></li>
+  <li>対戦勝利回数<%= @individual.first.wins_count %></li>
+  <li>勝率<%= @individual.first.win_percentage %>%</li>
+  <li>最大コンボ数<%= @individual.first.max_combo %></li>
+  <li>最大ダメージ</li>
+  <li>スコアアタック最高得点<%= @individual.first.score %></li>
+  <li>スコアアタッククリア:<%= @individual.first.score_clear %></li>
+  <li>アーケード最高得点<%= @individual.first.arcade_score %></li>
+</ul>
+
+<div class="btn-group" data-toggle="buttons-radio">
+  <a href="/individualkos/index?char_id=1&p_id=<%=@p_id%>" class="btn">悠</a>
+  <a href="/individualkos/index?char_id=2&p_id=<%=@p_id%>" class="btn">陽介</a>
+  <a href="/individualkos/index?char_id=3&p_id=<%=@p_id%>" class="btn">千枝</a>
+  <a href="/individualkos/index?char_id=4&p_id=<%=@p_id%>" class="btn">雪子</a>
+  <a href="/individualkos/index?char_id=5&p_id=<%=@p_id%>" class="btn">完二</a>
+  <a href="/individualkos/index?char_id=6&p_id=<%=@p_id%>" class="btn">クマ</a>
+  <a href="/individualkos/index?char_id=7&p_id=<%=@p_id%>" class="btn">直斗</a>
+  <a href="/individualkos/index?char_id=8&p_id=<%=@p_id%>" class="btn">美鶴</a>
+  <a href="/individualkos/index?char_id=9&p_id=<%=@p_id%>" class="btn">明彦</a>
+  <a href="/individualkos/index?char_id=10&p_id=<%=@p_id%>" class="btn">ｱｲｷﾞｽ</a>
+  <a href="/individualkos/index?char_id=11&p_id=<%=@p_id%>" class="btn">ｴﾘｻﾞﾍﾞｽ</a>
+  <a href="/individualkos/index?char_id=12&p_id=<%=@p_id%>" class="btn">ﾗﾋﾞﾘｽ</a>
+  <a href="/individualkos/index?char_id=13&p_id=<%=@p_id%>" class="btn">ｼｬﾄﾞｳﾗﾋﾞﾘｽ</a>
+</div>
+
+
+<script type="text/javascript">
+$('.tabs').button()
+
+$('.btn').change(function(){ $.rails.handleRemote(this) });
+$('.btn').on('ajax:success', function(event,data,status,xhr) { console.log('radio changed') });
+</script>

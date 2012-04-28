@@ -1,0 +1,2 @@
+module IndividualkosHelper
+end

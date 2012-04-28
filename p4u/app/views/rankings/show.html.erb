@@ -1,0 +1,30 @@
+<h3>キャラクター個別戦績</h3>
+
+<p><%= @rankings.total_count %>件中</p>
+
+<% @rankings.each do |ranks| %>
+  <div class="selection">
+    <div id="<%= ranks.id %>">
+      <div class="rank">
+        <h1><%= ranks.id -%>位</h1>
+      </div>
+      <div class="char_name">
+        <h2><%= link_to ranks.player_name, :controller => 'profiles', :id=> ranks.player_id %></h2>
+      <h2><%= link_to ranks.player_name, :controller => 'individual_kos', :player => ranks.player_id, :char => ranks.character_id %></h2>
+        <a href="http://p4u.tv/index.php?m=020_charapsr&pn=<%=ranks.player_id -%>&c=<%=ranks.character_id-%>&GO=+GO+"><%= ranks.character_name-%></a></h2></div>
+      <div class="data">
+        PSR:<%= ranks.psr -%>
+        <dl class="state">
+          <dt class="battle_count">対戦使用回数</dt>
+          <dd><%= ranks.battle_count %></dd>
+          <dt class="battle_win">対戦勝利回数</dt>
+          <dd><%= ranks.wins_count %></dd>
+          <dt class="win_percentage">勝率</dt>
+          <dd><%= ranks.win_percentage %>%</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @rankings %>

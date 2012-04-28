@@ -1,0 +1,15 @@
+<h3>プレイヤー検索<h3>
+<%= form_tag :action => 'show', :class => 'well form-search' do -%>
+  <label><%= text_field_tag 'player', nil, :placeholder => 'プレイヤー名' -%></label>
+  <div class="clearfix">
+    <div class="input">
+      <h3>キャラクター選択</h3>
+  <% for char in Character.find(:all) %>
+  <label class="checkbox inline"><%= check_box_tag "char[]","#{char.top_psr_char}",false ,{:tabindex => char.top_psr_char } -%><%=char.character_name -%></label>
+  <% end -%>
+    </div>
+  </div>
+  <br />
+  <%= submit_tag '検索', :class => 'btn', :disable_with => '送信中…' -%>
+<% end %>
+

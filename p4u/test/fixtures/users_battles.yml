@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gyakugire_act_avg: 1.5
+  negative_avg: 1.5
+  counter_avg: 1.5
+  slowly_counter_avg: 1.5
+  fatal_counter_avg: 1.5
+  reversal_burst_avg: 1.5
+  reversal_burst_avg: 1.5
+  max_burst_avg: 1.5
+  one_more_burst_avg: 1.5
+  gurd_cancel_avg: 1.5
+  just_gurd_avg: 1.5
+  one_more_cancel_avg: 1.5
+  skill_bust_avg: 1.5
+  sp_skill_avg: 1.5
+  mortal_blow_avg: 1.5
+  sp_skill_ko: 1.5
+  mortal_blow_ko_avg: 1.5
+  created_at: 2012-04-08 14:26:03
+  update_at: 2012-04-08 14:26:03
+
+two:
+  gyakugire_act_avg: 1.5
+  negative_avg: 1.5
+  counter_avg: 1.5
+  slowly_counter_avg: 1.5
+  fatal_counter_avg: 1.5
+  reversal_burst_avg: 1.5
+  reversal_burst_avg: 1.5
+  max_burst_avg: 1.5
+  one_more_burst_avg: 1.5
+  gurd_cancel_avg: 1.5
+  just_gurd_avg: 1.5
+  one_more_cancel_avg: 1.5
+  skill_bust_avg: 1.5
+  sp_skill_avg: 1.5
+  mortal_blow_avg: 1.5
+  sp_skill_ko: 1.5
+  mortal_blow_ko_avg: 1.5
+  created_at: 2012-04-08 14:26:03
+  update_at: 2012-04-08 14:26:03

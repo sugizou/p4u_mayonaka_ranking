@@ -1,0 +1,31 @@
+<h3>プレイヤーサーチ結果<h3>
+
+<p><%= @result.total_count %>件中</p>
+
+<%
+   @result_char = Character.select(:character_name).where(:top_psr_char => request.params[:char])
+   rank = 1
+   page_num = 0
+   if @result.current_page != 1
+     rank =  @result.current_page * 50
+   end
+%>
+<header><nav class=""></nav></header>
+  <p>検索条件:<%= request.params[:player] %>,
+         <% @result_char.each do |name | -%>
+         <%= name.character_name %>
+         <% end -%><p>
+  <%= form_tag({ :controller => 'search', :action => 'show' }) do %>
+  <%= text_field_tag :player  %>
+  <%= submit_tag '検索', :disable_with => '送信中…'%>
+  <% end %>
+<selection class="autopagerize_page_element">
+  <% @result.each do |res| %>
+    <article id="<%= rank %>">
+        <h2><%= link_to res.player_name, :controller => 'profiles', :id=> res.profile_id %></h2>
+    </article>
+  <% rank = rank + 1 %>
+  <% end %>
+</article>
+
+<%= paginate @result %>

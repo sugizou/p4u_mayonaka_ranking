@@ -1,0 +1,41 @@
+<h3>PSR ランキング</h3>
+
+<p><%= @rankings.total_count %>件中</p>
+
+<div class="wrapper">
+  <form class="ui-search" action="/rankings/show" method="post">
+    <div class="container">
+      <input type="text" id="suggest-input" name="player" value="" placeholder="プレイヤー検索"><input type="submit" class="submit" value="検索">
+    </div>
+  </form>
+</div>
+
+<div class="autopagerize_page_element">
+  <% @rankings.each do |ranks| %>
+  <div class="selection">
+    <div id="<%= ranks.rank_no %>">
+      <div class="rank">
+        <h1><%= ranks.rank_no -%>位</h1>
+      </div>
+      <div class="char_name">
+        <h2><%= link_to ranks.player_name, :controller => 'profiles', :id=> ranks.player_id %></h2>
+        <h2><%= link_to ranks.character_name, :controller => 'individualkos', :p_id => ranks.player_id, :char_id => ranks.character_id %></h2>
+        <h4><a href="http://p4u.tv/index.php?m=020_charapsr&pn=<%=ranks.player_id -%>&c=<%=ranks.character_id-%>&GO=+GO+">本家サイトへ</a></h4>
+      </div>
+      <div class="data">
+        <h2>PSR:<%= ranks.psr -%></h2>
+        <dl class="state">
+          <dt class="battle_count">対戦使用回数</dt>
+          <dd><%= ranks.battle_count %></dd>
+          <dt class="battle_win">対戦勝利回数</dt>
+          <dd><%= ranks.wins_count %></dd>
+          <dt class="win_percentage">勝率</dt>
+          <dd><%= ranks.win_percentage %>%</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= paginate @rankings %>

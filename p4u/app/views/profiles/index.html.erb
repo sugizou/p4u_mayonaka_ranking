@@ -1,0 +1,46 @@
+<h3>プロフィール</h3>
+<a href="http://p4u.tv/index.php?m=042_search_player_prof&pn=<%= @user.profile_id %>">本家のプロフィールページへ</a>
+<ul>
+  <li>プレイヤーネーム:<%= @user.player_name -%></li>
+  <li>称号:<%= @user.title -%></li>
+  <li>性別:<%= private?(@user.sex) -%></li>
+  <li>生年月日:<%= private?(@user.birthday) -%></li>
+  <li>ホームグラウンド:<%= private?(@user.home) -%></li>
+  <li>所属コミュ名:<%= private?(@user.community_comment) -%></li>
+  <li>公開コメント:<%= private?(@user.public_comment) -%></li>  
+</ul>
+
+<h3>戦績データ</h3>
+<% @users_ko = @user.users_ko %>
+<%=  %>
+<ul>
+  <li>通算対戦回数:<%= @users_ko.battle_count -%></li>
+  <li>通算勝利数:<%= @users_ko.battle_wins -%></li>
+  <li>通算勝率:<%= @users_ko.win_percentage -%></li>
+  <li>TOP PSR:<%= @users_ko.character.character_name unless @users_ko.character.nil? -%> <%= @users_ko.top_psr_point -%></li>
+  <li>LEVEL:<%= @users_ko.level -%></li>
+  <li>EXP:<%= @users_ko.exp -%></li>
+  <li>連勝記録:<%= @users_ko.win_streak -%></li>
+  <li>スコアアタック最高得点</li>
+</ul>
+
+<h3>プレイヤーバトルデータ</h3>
+<% @user_battle = @user.users_battle %>
+<ul>
+  <li>逆ギレアクション平均回数:<%= @user_battle.gyakugire_act_avg -%></li>
+  <li>ネガティブ状態平均回数:<%= @user_battle.negative_avg -%></li>
+  <li>カウンター平均回数:<%= @user_battle.counter_avg -%></li>
+  <li>スローカウンター平均回数:<%= @user_battle.slowly_counter_avg -%></li>
+  <li>フェイタルカウンター平均回数:<%= @user_battle.fatal_counter_avg -%></li>
+  <li>リバーサルバースト平均回数:<%= @user_battle.reversal_burst_avg -%></li>
+  <li>マックスバースト平均回数:<%= @user_battle.max_burst_avg -%></li>
+  <li>ワンモアバースト平均回数:<%= @user_battle.one_more_burst_avg -%></li>
+  <li>ガードキャンセル平均回数:<%= @user_battle.gurd_cancel_avg -%></li>
+  <li>直前ガード平均回数:<%= @user_battle.just_gurd_avg -%></li>
+  <li>ワンモアキャンセル平均回数:<%= @user_battle.one_more_cancel_avg -%></li>
+  <li>スキルブースト平均回数:<%= @user_battle.skill_bust_avg -%></li>
+  <li>SPスキル平均回数:<%= @user_battle.sp_skill_avg -%></li>
+  <li>一撃必殺技平均回数:<%= @user_battle.mortal_blow_avg -%></li>
+  <li>SPスキルKO率:<%= @user_battle.sp_skill_ko -%></li>
+  <li>一撃必殺技KO率:<%= @user_battle.mortal_blow_ko_avg -%></li>
+</ul>
